@@ -20,8 +20,13 @@ const Edit = () => {
   const dispatch = useDispatch();
 
   const handleUpdate = (id) => {
-    dispatch(updateTodo([updateText, id]))
-    navigate("/");
+    if (updateText) {
+      dispatch(updateTodo([updateText, id]))
+      navigate("/");
+    }else{
+      alert("You must add something")
+    }
+    
   }
 
   return (
